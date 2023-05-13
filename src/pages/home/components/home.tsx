@@ -1,8 +1,19 @@
 import React from "react";
-import s from "./home.module.css";
+import s from "./home.module.scss";
+import { ThisDay } from "./components/ThisDay/ThisDay";
+import { ThisDayInfo } from "./components/ThisDayInfo/ThisDayInfo";
 
 type Props = {};
 
-const home = (props: Props) => {
-  return <div className={s.home}>Home</div>;
+const Home = (props: Props) => {
+  return (
+    <div className={s.home}>
+      <div className={s.wrapper}>
+        <ThisDay />
+        <ThisDayInfo />
+      </div>
+    </div>
+  );
 };
+
+export { Home };
