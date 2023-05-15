@@ -4,7 +4,7 @@
   padding-left: 20px;
   max-width: 400px;
   width: 100%;
-  background: $lite-backgroud;
+  background: var(#{--components-backgroud-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -23,7 +23,7 @@
 }
 .this__day_name {
   font-size: 40px;
-  color: $lite-color;
+  color: var(#{--text-color-default});
 }
 .this__time {
   margin-bottom: 14px;

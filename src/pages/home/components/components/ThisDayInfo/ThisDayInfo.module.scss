@@ -5,7 +5,7 @@
   padding: 40px;
   max-width: 750px;
   width: 100%;
-  background: $lite-backgroud;
+  background: var(#{--components-backgroud-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -30,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $lite-backgroud;
+    background-color: #fff;
     box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
     border-radius: 50%;
   }
@@ -39,10 +39,10 @@
     font-size: 14px;
   }
   .indicator_name {
-    color: $base-color;
+    color: var(#{--text-color-default});
   }
   .indicator_value {
-    color: $lite-color;
+    color: var(#{--text-color-default});
   }
 }
 

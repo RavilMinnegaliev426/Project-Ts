@@ -1,6 +1,44 @@
-$lite-backgroud: #fff;
+$light-backgroud: #ffffff;
 $box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
 $border-radius: 20px;
 $primary-color: #4793ff;
-$lite-color: #000;
+$card-color: rgba(71, 147, 255, 0.2);
+
+$light-color: #000;
+$dark-color: #fff;
 $base-color: #939cb0;
+
+$body-backgroud-dark: #0d1117;
+$body-backgroud-light: #fff;
+
+$components-backgroud-dark: #4f4f4f;
+$components-backgroud-light: #fff;
+
+$card-backgroud-dark: #2e3035;
+$card-backgroud-light: rgba(71, 147, 255, 0.2);
+
+$card-box-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.35);
+$card-box-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.35);
+
+:root {
+  // body-backgroud
+  --body-backgroud-dark: #{$body-backgroud-dark};
+  --body-backgroud-light: #{$body-backgroud-light};
+  --body-backgroud-default: var(#{--body-backgroud-dark});
+  //components-backgroud
+  --components-backgroud-dark: #{$components-backgroud-dark};
+  --components-backgroud-light: #{$components-backgroud-light};
+  --components-backgroud-default: var(#{--components-backgroud-dark});
+  //card-backgroud
+  --card-backgroud-dark: #{$card-backgroud-dark};
+  --card-backgroud-light: #{$card-backgroud-light};
+  --card-backgroud-default: var(#{--card-backgroud-dark});
+  //card-shadow
+  --card-box-shadow-dark: #{$card-box-shadow-dark};
+  --card-box-shadow-light: #{$card-box-shadow-light};
+  --card-box-shadow-default: var(#{--card-box-shadow-dark});
+  //text
+  --text-color-dark: #{$dark-color};
+  --text-color-light: #{$light-color};
+  --text-color-default: var(#{--text-color-dark});
+}
