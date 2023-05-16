@@ -17,7 +17,7 @@ const ThisDay = (props: Props) => {
       </div>
       <div className={s.bootom__block}>
         <div className={s.this__time}>
-          Время:<span>21:54</span>
+          Время: <span>21:54</span>
         </div>
         <div className={s.this__city}>
           Город: <span>Санкт-Петербург</span>
