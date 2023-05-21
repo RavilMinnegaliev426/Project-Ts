@@ -22,9 +22,16 @@ const initialState: CurrentWeather = {
     ],
     main: {
       temp: 0,
+      pressure: 0,
+      feels_like: 0,
+      humidity: 0,
     },
     name: "loadin...",
     timezone: 0,
+    wind: {
+      speed: 0,
+      deg: 0,
+    },
   },
   isLoading: false,
   response: {
