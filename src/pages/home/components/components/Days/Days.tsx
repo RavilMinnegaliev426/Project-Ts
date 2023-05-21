@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./Days.module.scss";
 import { Card } from "./Card";
 import { Tabs } from "./Tabs";
+import { selectCurrentWeatherDataCard } from "../../../../../hooks/selectCurrentWeatherDataCard";
+import { useSelector } from "react-redux";
+import { fetchCurrentWeatherCard } from "../../../../../store/thunks/fetchCurrenWeatherCard";
+import { useCustomDispatch } from "../../../../../hooks/storeHooks";
+
 type Props = {};
 
 export interface Day {
@@ -12,7 +17,14 @@ export interface Day {
   temp_night: string;
   info: string;
 }
+
 export const Days = (props: Props) => {
+  const dispatch = useCustomDispatch();
+  const { weatherCard } = useSelector(selectCurrentWeatherDataCard);
+  useEffect(() => {
+    dispatch(fetchCurrentWeatherCard(56.32, 43.8));
+  }, []);
+
   const days: Day[] = [
     {
       day: "Сегодня",

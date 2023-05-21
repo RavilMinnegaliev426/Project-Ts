@@ -21,7 +21,6 @@ export const ThisDayInfo = (props: Props) => {
   const temp = `${weather.main.temp}° - ощущается как ${Math.round(
     weather.main.feels_like
   )}°`;
-  console.log(weather);
   const items = [
     {
       icon_id: "temp",

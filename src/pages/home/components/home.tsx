@@ -13,14 +13,16 @@ import {
 import { fetchCurrentWeather } from "../../../store/thunks/fetchCurrentWeather";
 import { useSelector } from "react-redux";
 import { selectCurrentWeatherData } from "../../../hooks/selectCurrentWeatherData";
+import { selectCurrentWeatherDataCard } from "../../../hooks/selectCurrentWeatherDataCard";
+import { fetchCurrentWeatherCard } from "../../../store/thunks/fetchCurrenWeatherCard";
 
 const Home = () => {
   const dispatch = useCustomDispatch();
   const { weather } = useSelector(selectCurrentWeatherData);
-
   useEffect(() => {
     dispatch(fetchCurrentWeather("Nizhniy Novgorod"));
   }, []);
+
   return (
     <div className={s.home}>
       {/* <div>{data}</div> */}
