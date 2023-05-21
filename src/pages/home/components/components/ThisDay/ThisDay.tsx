@@ -3,6 +3,7 @@ import s from "./ThisDay.module.scss";
 import {
   GlobalImageSelector,
   GlobalSVGSelector,
+  GlobalSVGSelector2,
 } from "../../../../../accets/image/global/globalImageSelector";
 import { Weather } from "../../../../../store/types";
 import { Clock } from "../UtilityFunction/Clock";
@@ -20,7 +21,7 @@ const ThisDay = ({ weather }: Props) => {
           <div className={s.this__day_name}>Сегодня</div>
         </div>
         <div className={s.sun_wrapper}>
-          {/* <GlobalSVGSelector2 id={weather.weather[0].main} /> */}
+          <GlobalSVGSelector2 id={weather.weather[0].main} />
         </div>
       </div>
       <div className={s.bootom__block}>

@@ -19,7 +19,7 @@ const Home = () => {
   const { weather } = useSelector(selectCurrentWeatherData);
 
   useEffect(() => {
-    dispatch(fetchCurrentWeather("Nizhny Novgorod"));
+    dispatch(fetchCurrentWeather("Nizhniy Novgorod"));
   }, []);
   return (
     <div className={s.home}>
