@@ -12,8 +12,8 @@ type Props = {};
 const Header = (props: Props) => {
   const theme = useTheme();
   const options = [
-    { value: "city_1", label: "Санкт-Петербург" },
-    { value: "city_2", label: "Нижний новгород" },
+    { value: "city_1", label: "Нижний новгород" },
+    { value: "city_2", label: "Санкт-Петербург" },
     { value: "city_3", label: "Москва" },
   ];
   const colorStyles = {

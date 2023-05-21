@@ -1,15 +1,30 @@
 import React from "react";
 import s from "./ThisDay.module.scss";
 import { GlobalImageSelector } from "../../../../../accets/image/global/globalImageSelector";
-type Props = {};
+import { Weather } from "../../../../../store/types";
+type Props = {
+  weather: Weather;
+};
+interface Clock {
+  date: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+}
+const ThisDay = ({ weather }: Props) => {
+  // const [first, setfirst] = useState(second);
 
-const ThisDay = (props: Props) => {
+  var date = new Date();
+  let hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+  let minutes =
+    date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+
   return (
     <div className={s.this__Day}>
       <div className={s.top__block}>
         <div className={s.top__block_wrapper}>
-          <div className={s.this__temp}>20°</div>
-          <div className={s.this__day_name}>tomorrow</div>
+          <div className={s.this__temp}>{Math.ceil(weather.main.temp)}</div>
+          <div className={s.this__day_name}>Сегодня</div>
         </div>
         <div className={s.sun_wrapper}>
           <GlobalImageSelector id="sun" />
@@ -17,10 +32,13 @@ const ThisDay = (props: Props) => {
       </div>
       <div className={s.bootom__block}>
         <div className={s.this__time}>
-          Время: <span>21:54</span>
+          Время:{" "}
+          <span>
+            {hours}:{minutes}
+          </span>
         </div>
         <div className={s.this__city}>
-          Город: <span>Санкт-Петербург</span>
+          Город: <span>{weather.name}</span>
         </div>
       </div>
     </div>
