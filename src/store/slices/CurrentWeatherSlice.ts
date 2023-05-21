@@ -15,10 +15,16 @@ type Responce = {
 
 const initialState: CurrentWeather = {
   weather: {
+    weather: [
+      {
+        main: "sun",
+      },
+    ],
     main: {
       temp: 0,
     },
     name: "loadin...",
+    timezone: 0,
   },
   isLoading: false,
   response: {
