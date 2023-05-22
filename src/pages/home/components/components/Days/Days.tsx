@@ -8,88 +8,54 @@ import { fetchCurrentWeatherCard } from "../../../../../store/thunks/fetchCurren
 import { useCustomDispatch } from "../../../../../hooks/storeHooks";
 
 type Props = {};
-
-export interface Day {
-  day: string;
-  day_info: string;
-  icon_id: string;
-  temp_day: string;
-  temp_night: string;
-  info: string;
+export interface dayMasMas {
+  time: Array<string>;
+  weathercode: Array<number>;
+  temp_max: Array<number>;
+  temp_min: Array<number>;
+  sunset: Array<string>;
+  wind_max: Array<number>;
+  wind_dominant: Array<number>;
+}
+export interface dayMas {
+  time: string;
+  weathercode: number;
+  temp_max: number;
+  temp_min: number;
+  sunset: string;
+  wind_max: number;
+  wind_dominant: number;
 }
 
 export const Days = (props: Props) => {
   const dispatch = useCustomDispatch();
   const { weatherCard } = useSelector(selectCurrentWeatherDataCard);
-  useEffect(() => {
-    dispatch(fetchCurrentWeatherCard(56.32, 43.8));
-  }, []);
+  const time = weatherCard.daily.time;
+  const weathercode = weatherCard.daily.weathercode;
+  const temp_max = weatherCard.daily.temperature_2m_max;
+  const temp_min = weatherCard.daily.temperature_2m_min;
+  const sunset = weatherCard.daily.sunset;
+  const wind_max = weatherCard.daily.windspeed_10m_max;
+  const wind_dominant = weatherCard.daily.winddirection_10m_dominant;
 
-  const days: Day[] = [
-    {
-      day: "Сегодня",
-      day_info: "28 авг",
-      icon_id: "sun",
-      temp_day: "+18",
-      temp_night: "+15",
-      info: "Облачно",
-    },
-    {
-      day: "Завтра",
-      day_info: "29 авг",
-      icon_id: "small_rain_sun",
-      temp_day: "+18",
-      temp_night: "+15",
-      info: "небольшой дождь и солнце",
-    },
-    {
-      day: "Ср",
-      day_info: "30 авг",
-      icon_id: "small_rain",
-      temp_day: "+18",
-      temp_night: "+15",
-      info: "небольшой дождь",
-    },
-    {
-      day: "Чт",
-      day_info: "28 авг",
-      icon_id: "mainly_cloudy",
-      temp_day: "+18",
-      temp_night: "+15",
-      info: "Облачно",
-    },
-    {
-      day: "Пт",
-      day_info: "28 авг",
-      icon_id: "rain",
-      temp_day: "+18",
-      temp_night: "+15",
-      info: "Облачно",
-    },
-    {
-      day: "Сб",
-      day_info: "28 авг",
-      icon_id: "sun",
-      temp_day: "+18",
-      temp_night: "+15",
-      info: "Облачно",
-    },
-    {
-      day: "Вс",
-      day_info: "28 авг",
-      icon_id: "sun",
-      temp_day: "+18",
-      temp_night: "+15",
-      info: "Облачно",
-    },
-  ];
-
+  let dayMassive = [];
+  for (let i = 0; i < time.length; i++) {
+    dayMassive.push({
+      time: time[i],
+      weathercode: weathercode[i],
+      temp_max: temp_max[i],
+      temp_min: temp_min[i],
+      sunset: sunset[i],
+      wind_max: wind_max[i],
+      wind_dominant: wind_dominant[i],
+    });
+  }
   return (
     <>
       <Tabs />
       <div className={s.days}>
-        {days.map((day: Day) => (
-          <Card day={day} key={day.day} />
+        {dayMassive.map((day: dayMas) => (
+          <Card {...day} key={day.time} />
         ))}
       </div>
     </>

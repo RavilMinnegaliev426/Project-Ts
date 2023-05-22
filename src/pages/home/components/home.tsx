@@ -19,6 +19,7 @@ import { fetchCurrentWeatherCard } from "../../../store/thunks/fetchCurrenWeathe
 const Home = () => {
   const dispatch = useCustomDispatch();
   const { weather } = useSelector(selectCurrentWeatherData);
+
   useEffect(() => {
     dispatch(fetchCurrentWeather("Nizhniy Novgorod"));
   }, []);

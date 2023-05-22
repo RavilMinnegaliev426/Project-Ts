@@ -8,18 +8,50 @@ import { useTheme } from "../hooks/useTheme";
 import { Theme } from "../context/ThemeContext";
 import { useCustomDispatch } from "../hooks/storeHooks";
 import { fetchCurrentWeather } from "../store/thunks/fetchCurrentWeather";
+import { fetchCurrentWeatherCard } from "../store/thunks/fetchCurrenWeatherCard";
 
 type Props = {};
 
 const Header = (props: Props) => {
   const theme = useTheme();
   const options = [
-    { value: "city_1", label: "Нижний новгород", name: "Nizhniy Novgorod" },
-    { value: "city_2", label: "Санкт-Петербург", name: "Saint Petersburg" },
-    { value: "city_3", label: "Москва", name: "Moscow" },
-    { value: "city_4", label: "Париж", name: "Paris" },
-    { value: "city_5", label: "Лондон", name: "London" },
+    {
+      value: "city_1",
+      label: "Нижний новгород",
+      name: "Nizhniy Novgorod",
+      latitude: 56.32,
+      longitude: 43.8,
+    },
+    {
+      value: "city_2",
+      label: "Санкт-Петербург",
+      name: "Saint Petersburg",
+      latitude: 59.94,
+      longitude: 30.31,
+    },
+    {
+      value: "city_3",
+      label: "Москва",
+      name: "Moscow",
+      latitude: 55.75,
+      longitude: 37.62,
+    },
+    {
+      value: "city_4",
+      label: "Париж",
+      name: "Paris",
+      latitude: 48.85,
+      longitude: 2.35,
+    },
+    {
+      value: "city_5",
+      label: "Лондон",
+      name: "London",
+      latitude: 51.51,
+      longitude: -0.13,
+    },
   ];
+
   const colorStyles = {
     control: (styles: any) => ({
       ...styles,
@@ -42,8 +74,12 @@ const Header = (props: Props) => {
 
   const dispatch = useCustomDispatch();
   const [valueE, setValueE] = useState("Nizhniy Novgorod");
+  const [valuelatitude, setvaluelatitude] = useState(56.32);
+  const [valuelongitude, setvaluelongitude] = useState(43.8);
+
   useEffect(() => {
     dispatch(fetchCurrentWeather(`${valueE}`));
+    dispatch(fetchCurrentWeatherCard(valuelatitude, valuelongitude));
   }, [valueE]);
 
   return (
