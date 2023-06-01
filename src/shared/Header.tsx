@@ -11,6 +11,13 @@ import { fetchCurrentWeather } from "../store/thunks/fetchCurrentWeather";
 import { fetchCurrentWeatherCard } from "../store/thunks/fetchCurrenWeatherCard";
 
 type Props = {};
+interface e {
+  value: string;
+  label: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+}
 
 const Header = (props: Props) => {
   const theme = useTheme();
@@ -50,6 +57,13 @@ const Header = (props: Props) => {
       latitude: 51.51,
       longitude: -0.13,
     },
+    {
+      value: "city_6",
+      label: "Ижевск",
+      name: "izhevsk",
+      latitude: 53.2333,
+      longitude: 56.85,
+    },
   ];
 
   const colorStyles = {
@@ -73,14 +87,18 @@ const Header = (props: Props) => {
   }
 
   const dispatch = useCustomDispatch();
-  const [valueE, setValueE] = useState("Nizhniy Novgorod");
-  const [valuelatitude, setvaluelatitude] = useState(56.32);
-  const [valuelongitude, setvaluelongitude] = useState(43.8);
+  const [valueHead, setValueHead] = useState({
+    value: "city_1",
+    label: "Нижний новгород",
+    name: "Nizhniy Novgorod",
+    latitude: 56.32,
+    longitude: 43.8,
+  });
 
   useEffect(() => {
-    dispatch(fetchCurrentWeather(`${valueE}`));
-    dispatch(fetchCurrentWeatherCard(valuelatitude, valuelongitude));
-  }, [valueE]);
+    dispatch(fetchCurrentWeather(`${valueHead.name}`));
+    dispatch(fetchCurrentWeatherCard(valueHead.latitude, valueHead.longitude));
+  }, [valueHead.name]);
 
   return (
     <header className={s.header}>
@@ -98,7 +116,7 @@ const Header = (props: Props) => {
           defaultValue={options}
           styles={colorStyles}
           options={options}
-          onChange={(e) => setValueE(e!.name)}
+          onChange={(e) => setValueHead(e!)}
         />
       </div>
     </header>

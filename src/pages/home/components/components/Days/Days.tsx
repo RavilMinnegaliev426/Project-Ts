@@ -50,6 +50,7 @@ export const Days = (props: Props) => {
       wind_dominant: wind_dominant[i],
     });
   }
+
   return (
     <>
       <Tabs />

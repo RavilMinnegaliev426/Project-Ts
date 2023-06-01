@@ -62,9 +62,52 @@ const GlobalImageSelector = ({ id }: Props) => {
   }
   return <div>GlobalImageSelector</div>;
 };
+function checkerRain(res: number | string) {
+  const rain = ["rain", 61, 63, 65, 66, 67, 80, 81, 82];
+  if (rain.includes(res)) {
+    return rain.includes(res) ? res : {};
+  }
+}
+function checkerSmallRain(res: number | string) {
+  const small_rain = ["small_rain", 51, 53, 55, 56, 57];
+  if (small_rain.includes(res)) {
+    return small_rain.includes(res) ? res : {};
+  }
+}
+function checkerSun(res: number | string) {
+  const sun = ["sun", 0, 1];
+  if (sun.includes(res)) {
+    return sun.includes(res) ? res : {};
+  }
+}
+function chekerMainlyCloudy(res: number | string) {
+  const mainly_cloudy = ["mainly_cloudy", 2, 3];
+  if (mainly_cloudy.includes(res)) {
+    return mainly_cloudy.includes(res) ? res : {};
+  }
+}
+
+function chekerFog(res: number | string) {
+  const Fog = ["Fog", 45, 48];
+  if (Fog.includes(res)) {
+    return Fog.includes(res) ? res : {};
+  }
+}
+function chekerThunderstorm(res: number | string) {
+  const Thunderstorm = ["Thunderstorm", 95, 96, 93, 99];
+  if (Thunderstorm.includes(res)) {
+    return Thunderstorm.includes(res) ? res : {};
+  }
+}
+function chekerSnow(res: number | string) {
+  const chekerSnow = ["Snow", 71, 73, 75, 85, 86];
+  if (chekerSnow.includes(res)) {
+    return chekerSnow.includes(res) ? res : {};
+  }
+}
 const GlobalSVGSelector = ({ id }: Props) => {
   switch (id) {
-    case "rain":
+    case checkerRain(id):
       return (
         <svg
           width="48"
@@ -111,7 +154,7 @@ const GlobalSVGSelector = ({ id }: Props) => {
           </defs>
         </svg>
       );
-    case "small_rain":
+    case checkerSmallRain(id):
       return (
         <svg
           width="48"
@@ -224,7 +267,7 @@ const GlobalSVGSelector = ({ id }: Props) => {
           </defs>
         </svg>
       );
-    case "sun":
+    case checkerSun(id):
       return (
         <svg
           width="48"
@@ -256,7 +299,7 @@ const GlobalSVGSelector = ({ id }: Props) => {
           </defs>
         </svg>
       );
-    case "mainly_cloudy":
+    case chekerMainlyCloudy(id):
       return (
         <svg
           width="48"
@@ -304,6 +347,56 @@ const GlobalSVGSelector = ({ id }: Props) => {
           </defs>
         </svg>
       );
+    case chekerFog(id):
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          enable-background="new 0 0 20 20"
+          height="48px"
+          viewBox="0 0 20 20"
+          width="40px"
+          fill="#9CC3F9"
+        >
+          <rect fill="none" height="20" width="20" />
+          <path d="M14.44,5.76C14.09,3.63,12.23,2,10,2C8.36,2,6.87,2.88,6.09,4.3C4.07,4.57,2.5,6.3,2.5,8.37c0,2.27,1.85,4.12,4.12,4.12h7.5 c1.86,0,3.38-1.52,3.38-3.38C17.5,7.37,16.16,5.93,14.44,5.76z M14.5,14c0.41,0,0.75,0.34,0.75,0.75s-0.34,0.75-0.75,0.75 s-0.75-0.34-0.75-0.75S14.09,14,14.5,14z M6.25,16.5C6.66,16.5,7,16.84,7,17.25S6.66,18,6.25,18S5.5,17.67,5.5,17.25 S5.84,16.5,6.25,16.5z M4.75,14.75C4.75,14.34,5.09,14,5.5,14h6.75c0.41,0,0.75,0.34,0.75,0.75s-0.34,0.75-0.75,0.75H5.5 C5.09,15.5,4.75,15.17,4.75,14.75z M7.75,17.25c0-0.41,0.34-0.75,0.75-0.75h5.25c0.41,0,0.75,0.34,0.75,0.75S14.16,18,13.75,18H8.5 C8.09,18,7.75,17.67,7.75,17.25z" />
+        </svg>
+      );
+    case chekerThunderstorm(id):
+      return (
+        <svg
+          width="33"
+          height="48"
+          viewBox="0 0 33 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M26.38 8.02C25.68 3.56 21.88 0.12 17.22 0.02C17.14 -1.86265e-08 17.08 0 17 0C13.38 0 10.2 2.04 8.6 5.04C4.42 5.48 1.1 8.98 1 13.3C0.9 18 4.62 21.88 9.3 22H26C29.86 22 33 18.86 33 15C33 11.26 30.08 8.2 26.38 8.02Z"
+            fill="#9DC3F9"
+          />
+          <path
+            d="M22.1 24L17.12 29.36L20.68 31.4L16.74 36H20.68L25.32 30.6L21.88 28.64L26.2 24H22.1Z"
+            fill="#FFBD1A"
+          />
+          <path
+            d="M12.1 24L7.12 29.36L10.68 31.4L6.74 36H10.68L15.32 30.6L11.88 28.64L16.2 24H12.1Z"
+            fill="#FFBD1A"
+          />
+        </svg>
+      );
+    case chekerSnow(id):
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48"
+          viewBox="0 -960 960 960"
+          width="48"
+          fill="#9CC3F9"
+        >
+          <path d="M450-80v-195L301-126l-43-42 192-192v-90h-90L172-262l-44-41 147-147H80v-60h195L125-660l43-43 192 193h90v-91L262-789l42-44 146 147v-194h60v194l150-150 42 43-192 192v91h91l189-189 43 42-147 147h194v60H686l148 149-41 43-192-192h-91v90l192 193-41 43-151-151v195h-60Z" />
+        </svg>
+      );
+
     case "close":
       return (
         <svg

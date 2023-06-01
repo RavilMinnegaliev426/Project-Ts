@@ -1,10 +1,6 @@
 import React from "react";
 import s from "./ThisDay.module.scss";
-import {
-  GlobalImageSelector,
-  GlobalSVGSelector,
-  GlobalSVGSelector2,
-} from "../../../../../accets/image/global/globalImageSelector";
+import { GlobalSVGSelector2 } from "../../../../../accets/image/global/globalImageSelector";
 import { Weather } from "../../../../../store/types";
 import { Clock } from "../UtilityFunction/Clock";
 type Props = {
@@ -12,7 +8,6 @@ type Props = {
 };
 
 const ThisDay = ({ weather }: Props) => {
-  // const [first, setfirst] = useState(second);
   return (
     <div className={s.this__Day}>
       <div className={s.top__block}>
