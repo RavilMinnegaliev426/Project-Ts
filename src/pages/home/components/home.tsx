@@ -1,32 +1,21 @@
 import React from "react";
-import { useState } from "react";
 import { useEffect } from "react";
 import s from "./home.module.scss";
 import { ThisDay } from "./components/ThisDay/ThisDay";
 import { ThisDayInfo } from "./components/ThisDayInfo/ThisDayInfo";
 import { Days } from "./components/Days/Days";
-import { getCurrentWeather } from "../../../API/WeatherService";
-import {
-  useCustomDispatch,
-  useCustomSelector,
-} from "../../../hooks/storeHooks";
-import { fetchCurrentWeather } from "../../../store/thunks/fetchCurrentWeather";
+import { useCustomDispatch } from "../../../hooks/storeHooks";
 import { useSelector } from "react-redux";
 import { selectCurrentWeatherData } from "../../../hooks/selectCurrentWeatherData";
-import { selectCurrentWeatherDataCard } from "../../../hooks/selectCurrentWeatherDataCard";
-import { fetchCurrentWeatherCard } from "../../../store/thunks/fetchCurrenWeatherCard";
+import { fetchCurrentWeather } from "../../../store/thunks/fetchCurrentWeather";
+import { setAnswerCardStateCity } from "../../../store/slices/CardAnswerSlice";
 
 const Home = () => {
   const dispatch = useCustomDispatch();
   const { weather } = useSelector(selectCurrentWeatherData);
-
-  useEffect(() => {
-    dispatch(fetchCurrentWeather("Nizhniy Novgorod"));
-  }, []);
-
+  dispatch(setAnswerCardStateCity(weather.name));
   return (
     <div className={s.home}>
-      {/* <div>{data}</div> */}
       <div className={s.wrapper}>
         <ThisDay weather={weather} />
         <ThisDayInfo />

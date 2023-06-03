@@ -9,9 +9,11 @@ import { Theme } from "../context/ThemeContext";
 import { useCustomDispatch } from "../hooks/storeHooks";
 import { fetchCurrentWeather } from "../store/thunks/fetchCurrentWeather";
 import { fetchCurrentWeatherCard } from "../store/thunks/fetchCurrenWeatherCard";
+import { setAnswerCardStateCity } from "../store/slices/CardAnswerSlice";
 
 type Props = {};
-interface e {
+
+interface E {
   value: string;
   label: string;
   name: string;
@@ -87,18 +89,23 @@ const Header = (props: Props) => {
   }
 
   const dispatch = useCustomDispatch();
-  const [valueHead, setValueHead] = useState({
+  let obj = {
     value: "city_1",
     label: "Нижний новгород",
     name: "Nizhniy Novgorod",
     latitude: 56.32,
     longitude: 43.8,
-  });
+  };
 
   useEffect(() => {
-    dispatch(fetchCurrentWeather(`${valueHead.name}`));
-    dispatch(fetchCurrentWeatherCard(valueHead.latitude, valueHead.longitude));
-  }, [valueHead.name]);
+    dispatch(fetchCurrentWeather(`${obj.name}`));
+    dispatch(fetchCurrentWeatherCard(obj.latitude, obj.longitude));
+  }, [obj]);
+
+  function Click(e: E) {
+    dispatch(fetchCurrentWeather(e.name));
+    dispatch(fetchCurrentWeatherCard(e.latitude, e.longitude));
+  }
 
   return (
     <header className={s.header}>
@@ -116,7 +123,7 @@ const Header = (props: Props) => {
           defaultValue={options}
           styles={colorStyles}
           options={options}
-          onChange={(e) => setValueHead(e!)}
+          onChange={(e) => Click(e!)}
         />
       </div>
     </header>

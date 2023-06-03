@@ -1,5 +1,7 @@
 import React from "react";
 import cloud from "../../../../../accets/Image-cart/cloud.png";
+import blackCloud from "../../../../../accets/Image-cart/black-cloud5.png";
+
 import s from "./ThisDayInfo.module.scss";
 import ThisDayItem from "./ThisDayItem";
 import { selectCurrentWeatherData } from "../../../../../hooks/selectCurrentWeatherData";
