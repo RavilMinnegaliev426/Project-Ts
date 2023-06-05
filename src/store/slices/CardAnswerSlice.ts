@@ -15,6 +15,7 @@ export interface CardAnswer {
   Days: string;
   city: string;
   time: string;
+  SvgWeather: string;
 }
 
 const initialState: CardAnswer = {
@@ -32,6 +33,7 @@ const initialState: CardAnswer = {
   Days: "",
   city: "loading..",
   time: "00:00:00",
+  SvgWeather: "loading...",
 };
 
 const CardAnswerSlice = createSlice({
@@ -50,6 +52,9 @@ const CardAnswerSlice = createSlice({
     setAnswerCardStateCity: (state, action) => {
       state.city = action.payload;
     },
+    setSvgWeather: (state, action) => {
+      state.SvgWeather = action.payload;
+    },
   },
 });
 
@@ -57,5 +62,6 @@ export const { setAnswerCardState } = CardAnswerSlice.actions;
 export const { setAnswerState } = CardAnswerSlice.actions;
 export const { setAnswerCardStateDays } = CardAnswerSlice.actions;
 export const { setAnswerCardStateCity } = CardAnswerSlice.actions;
+export const { setSvgWeather } = CardAnswerSlice.actions;
 
 export default CardAnswerSlice.reducer;

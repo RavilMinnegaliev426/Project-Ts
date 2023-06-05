@@ -8,8 +8,8 @@
   padding: 40px;
   max-width: 750px;
   width: 100%;
-  background: $light-backgroud;
-  box-shadow: $box-shadow;
+  background: var(#{--components-backgroud-default});
+  box-shadow: var(#{--card-box-shadow-default});
   border-radius: $border-radius;
   align-items: center;
   justify-content: space-between;
@@ -54,11 +54,12 @@
     margin-bottom: 12px;
   }
   .day__name {
+    color: var(#{--text-color-default});
     font-weight: 400;
     font-size: 25px;
     margin-bottom: 12px;
   }
-  .day__time,
+  .day__weather,
   .day__city {
     color: $base-color;
     font-size: 15px;
