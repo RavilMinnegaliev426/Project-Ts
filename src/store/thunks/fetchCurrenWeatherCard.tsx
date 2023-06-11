@@ -4,12 +4,13 @@ import { CurrentWeatherCardSlice } from "../slices/CurrentWeatherCardSlice";
 
 export const fetchCurrentWeatherCard = (
   latitude: number,
-  longitude: number
+  longitude: number,
+  tabsNumber: number
 ) => {
   return async (dispatch: AppDispatch) => {
     try {
       dispatch(CurrentWeatherCardSlice.actions.fetchCurrentWeatherCard);
-      const res = await getCardCurrentWeather(latitude, longitude);
+      const res = await getCardCurrentWeather(latitude, longitude, tabsNumber);
       if (res.status === 200) {
         dispatch(
           CurrentWeatherCardSlice.actions.fetchCurrentWeatherSuccess(res)
