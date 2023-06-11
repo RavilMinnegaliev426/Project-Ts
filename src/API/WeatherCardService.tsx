@@ -7,6 +7,6 @@ export async function getCardCurrentWeather(
   longitude: number
 ): Promise<AxiosResponse<CardWeather>> {
   return axios.get<CardWeather>(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunset,sunrise,precipitation_probability_max,windspeed_10m_max,winddirection_10m_dominant&current_weather=true&timezone=Europe%2FLondon`
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunset,sunrise,precipitation_probability_max,windspeed_10m_max,winddirection_10m_dominant&current_weather=true&forecast_days=${14}&timezone=Europe%2FLondon`
   );
 }

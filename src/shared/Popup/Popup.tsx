@@ -5,7 +5,10 @@ import ThisDayItem from "../../pages/home/components/components/ThisDayInfo/This
 
 import { useSelector } from "react-redux";
 import { selectAnswerCard } from "../../hooks/selectCardAnswer";
-import { GlobalSVGSelector } from "../../accets/image/global/globalImageSelector";
+import {
+  GlobalSVGSelector,
+  PopupSelector,
+} from "../../accets/image/global/globalImageSelector";
 import { useCustomDispatch } from "../../hooks/storeHooks";
 import {
   setAnswerState,
@@ -86,7 +89,7 @@ export const Popup = () => {
           <div className={s.day__temp}>{Math.round(cardInfo.temp_max)}°</div>
           <div className={s.day__name}>{Days}</div>
           <div className={s.img}>
-            <GlobalSVGSelector id={cardInfo.weathercode} />
+            <PopupSelector id={weatherToCode(cardInfo.weathercode)!} />
           </div>
           <div className={s.day__weather}>
             <span>Погода:{weatherToCode(cardInfo.weathercode)}</span>
@@ -101,7 +104,7 @@ export const Popup = () => {
           ))}
         </div>
         <div className={s.close} onClick={isClose}>
-          <GlobalSVGSelector id="close" />
+          <PopupSelector id="close" />
         </div>
       </div>
     </>
