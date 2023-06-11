@@ -20,10 +20,7 @@ interface Props {
 }
 export const Popup = () => {
   const [active, setActive] = useState(true);
-  const { cardInfo } = useSelector(selectAnswerCard);
-  const { Answer } = useSelector(selectAnswerCard);
-  const { Days } = useSelector(selectAnswerCard);
-  const { city } = useSelector(selectAnswerCard);
+  const { cardInfo, Answer, Days, city } = useSelector(selectAnswerCard);
 
   const dispatch = useCustomDispatch();
   console.log(cardInfo, Answer, Days);

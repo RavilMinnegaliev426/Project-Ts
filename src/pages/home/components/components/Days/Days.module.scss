@@ -83,6 +83,10 @@
 .cancel {
   margin-right: 0;
 }
+.cancel:hover {
+  background: $primary-color;
+  color: #fff;
+}
 
 .tab {
   &.active {

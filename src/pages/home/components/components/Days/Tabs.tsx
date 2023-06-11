@@ -18,10 +18,10 @@ export const Tabs = (props: Props) => {
       value: "На 14 дней",
       numberState: 14,
     },
-    {
-      value: "Слайдер",
-      numberState: 14,
-    },
+    // {
+    //   value: "Слайдер",
+    //   numberState: 14,
+    // },
   ];
   const dispatch = useCustomDispatch();
 
@@ -41,7 +41,9 @@ export const Tabs = (props: Props) => {
           </div>
         ))}
       </div>
-      <div className={s.cancel}>Отменить</div>
+      <div className={s.cancel} onClick={() => tabsClick(7)}>
+        Отменить
+      </div>
     </div>
   );
 };
