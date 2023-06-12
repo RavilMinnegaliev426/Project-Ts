@@ -2,6 +2,9 @@ import React from "react";
 import s from "./Days.module.scss";
 import { useCustomDispatch } from "../../../../../hooks/storeHooks";
 import { tabsNumberState } from "../../../../../store/slices/TabsSlice";
+import { fetchCurrentWeatherCard } from "../../../../../store/thunks/fetchCurrenWeatherCard";
+import { useSelector } from "react-redux";
+import { SelectTabs } from "../../../../../hooks/selectTabs";
 
 type Props = {};
 interface Tabs {
@@ -23,10 +26,14 @@ export const Tabs = (props: Props) => {
     //   numberState: 14,
     // },
   ];
-  const dispatch = useCustomDispatch();
 
+  const dispatch = useCustomDispatch();
+  const { latitude } = useSelector(SelectTabs);
+  const { longitude } = useSelector(SelectTabs);
   function tabsClick(e: number) {
+    console.log(latitude, longitude, e);
     dispatch(tabsNumberState(e));
+    dispatch(fetchCurrentWeatherCard(latitude, longitude, e));
   }
   return (
     <div className={s.tabs}>

@@ -12,6 +12,7 @@ import { fetchCurrentWeatherCard } from "../store/thunks/fetchCurrenWeatherCard"
 import { setAnswerCardStateCity } from "../store/slices/CardAnswerSlice";
 import { useSelector } from "react-redux";
 import { SelectTabs } from "../hooks/selectTabs";
+import { tabslatitude, tabslongitude } from "../store/slices/TabsSlice";
 
 type Props = {};
 
@@ -103,9 +104,11 @@ const Header = (props: Props) => {
   useEffect(() => {
     dispatch(fetchCurrentWeather(`${obj.name}`));
     dispatch(fetchCurrentWeatherCard(obj.latitude, obj.longitude, tabsNumber));
-  }, [obj, tabsNumber]);
+  }, []);
 
   function Click(e: E) {
+    dispatch(tabslatitude(e.latitude));
+    dispatch(tabslongitude(e.longitude));
     dispatch(fetchCurrentWeather(e.name));
     dispatch(fetchCurrentWeatherCard(e.latitude, e.longitude, tabsNumber));
   }

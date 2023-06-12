@@ -17,8 +17,16 @@ const tabsNumberSlice = createSlice({
     tabsNumberState(state, action) {
       state.tabsNumber = action.payload;
     },
+    tabslatitude(state, action) {
+      state.latitude = action.payload;
+    },
+    tabslongitude(state, action) {
+      state.longitude = action.payload;
+    },
   },
 });
 export const { tabsNumberState } = tabsNumberSlice.actions;
+export const { tabslatitude } = tabsNumberSlice.actions;
+export const { tabslongitude } = tabsNumberSlice.actions;
 
 export default tabsNumberSlice.reducer;
