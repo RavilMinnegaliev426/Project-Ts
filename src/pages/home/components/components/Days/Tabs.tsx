@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./Days.module.scss";
 import { useCustomDispatch } from "../../../../../hooks/storeHooks";
 import { tabsNumberState } from "../../../../../store/slices/TabsSlice";
@@ -6,12 +5,11 @@ import { fetchCurrentWeatherCard } from "../../../../../store/thunks/fetchCurren
 import { useSelector } from "react-redux";
 import { SelectTabs } from "../../../../../hooks/selectTabs";
 
-type Props = {};
 interface Tabs {
   value: string;
   numberState: number;
 }
-export const Tabs = (props: Props) => {
+export const Tabs = () => {
   const tabs: Tabs[] = [
     {
       value: "На неделе",
@@ -21,10 +19,10 @@ export const Tabs = (props: Props) => {
       value: "На 14 дней",
       numberState: 14,
     },
-    // {
-    //   value: "Слайдер",
-    //   numberState: 14,
-    // },
+    {
+      value: "Слайдер",
+      numberState: 14,
+    },
   ];
 
   const dispatch = useCustomDispatch();

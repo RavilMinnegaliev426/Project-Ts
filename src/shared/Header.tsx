@@ -1,5 +1,3 @@
-import React from "react";
-import { useState } from "react";
 import s from "./Header.module.scss";
 import { GlobalImageSelector } from "../accets/image/global/globalImageSelector";
 import Select from "react-select";
@@ -9,14 +7,11 @@ import { Theme } from "../context/ThemeContext";
 import { useCustomDispatch } from "../hooks/storeHooks";
 import { fetchCurrentWeather } from "../store/thunks/fetchCurrentWeather";
 import { fetchCurrentWeatherCard } from "../store/thunks/fetchCurrenWeatherCard";
-import { setAnswerCardStateCity } from "../store/slices/CardAnswerSlice";
 import { useSelector } from "react-redux";
 import { SelectTabs } from "../hooks/selectTabs";
 import { tabslatitude, tabslongitude } from "../store/slices/TabsSlice";
 
-type Props = {};
-
-interface E {
+interface IСity {
   value: string;
   label: string;
   name: string;
@@ -24,7 +19,7 @@ interface E {
   longitude: number;
 }
 
-const Header = (props: Props) => {
+const Header = () => {
   const theme = useTheme();
   const options = [
     {
@@ -106,7 +101,7 @@ const Header = (props: Props) => {
     dispatch(fetchCurrentWeatherCard(obj.latitude, obj.longitude, tabsNumber));
   }, []);
 
-  function Click(e: E) {
+  function Click(e: IСity) {
     dispatch(tabslatitude(e.latitude));
     dispatch(tabslongitude(e.longitude));
     dispatch(fetchCurrentWeather(e.name));

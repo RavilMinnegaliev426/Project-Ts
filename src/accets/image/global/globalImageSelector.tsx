@@ -1,7 +1,3 @@
-import React from "react";
-import { useCustomDispatch } from "../../../hooks/storeHooks";
-import { setSvgWeather } from "../../../store/slices/CardAnswerSlice";
-
 interface Props {
   id: string | number;
 }
@@ -10,7 +6,10 @@ const GlobalImageSelector = ({ id }: Props) => {
   switch (id) {
     case "header-logo":
       return (
-        <img src="https://cdn-icons-png.flaticon.com/64/1599/1599017.png"></img>
+        <img
+          src="https://cdn-icons-png.flaticon.com/64/1599/1599017.png"
+          alt="icon"
+        ></img>
       );
     case "change-theme":
       return (
@@ -62,7 +61,6 @@ const GlobalImageSelector = ({ id }: Props) => {
     default:
       return null;
   }
-  return <div>GlobalImageSelector</div>;
 };
 function checkerRain(res: number | string) {
   const rain = ["rain", 61, 63, 65, 66, 67, 80, 81, 82];
@@ -336,7 +334,6 @@ const GlobalSVGSelector = ({ id }: Props) => {
     default:
       return null;
   }
-  return <div>GlobalSVGSelector</div>;
 };
 
 const PopupSelector = ({ id }: Props) => {
@@ -498,7 +495,6 @@ const GlobalSVGSelector2 = ({ id }: Props) => {
     default:
       return null;
   }
-  return <div>GlobalSVGSelector2</div>;
 };
 export { GlobalImageSelector };
 export { GlobalSVGSelector };

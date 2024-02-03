@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
 import s from "./Days.module.scss";
 import { GlobalSVGSelector } from "../../../../../accets/image/global/globalImageSelector";
 import { dayMas } from "./Days";
-import { Popup } from "../../../../../shared/Popup/Popup";
 import { useCustomDispatch } from "../../../../../hooks/storeHooks";
-import CardAnswerSlice, {
+import {
   setAnswerCardState,
   setAnswerCardStateDays,
   setAnswerState,

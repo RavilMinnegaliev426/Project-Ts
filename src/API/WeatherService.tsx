@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-import React from "react";
 import { Weather } from "../store/types";
 
 export async function getCurrentWeather(

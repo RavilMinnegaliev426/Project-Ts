@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
 import s from "./Days.module.scss";
 import { Card } from "./Card";
 import { Tabs } from "./Tabs";
 import { selectCurrentWeatherDataCard } from "../../../../../hooks/selectCurrentWeatherDataCard";
 import { useSelector } from "react-redux";
-import { useCustomDispatch } from "../../../../../hooks/storeHooks";
 
 type Props = {};
 
@@ -22,7 +20,6 @@ export interface dayMas {
 }
 
 export const Days = (props: Props) => {
-  const dispatch = useCustomDispatch();
   const { weatherCard } = useSelector(selectCurrentWeatherDataCard);
   const time = weatherCard.daily.time;
   const weathercode = weatherCard.daily.weathercode;

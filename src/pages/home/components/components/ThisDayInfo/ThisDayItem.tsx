@@ -1,4 +1,3 @@
-import React from "react";
 import { Item } from "./ThisDayInfo";
 import s from "./ThisDayInfo.module.scss";
 import { IndicatorSvgSeleccor } from "../../../../../accets/image/global/IndicatorSvgSeleccor";

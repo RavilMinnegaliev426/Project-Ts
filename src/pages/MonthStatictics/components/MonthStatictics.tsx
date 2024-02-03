@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./MonthStatictics.module.css";
 
 type Props = {};

@@ -5,19 +5,10 @@ import ThisDayItem from "../../pages/home/components/components/ThisDayInfo/This
 
 import { useSelector } from "react-redux";
 import { selectAnswerCard } from "../../hooks/selectCardAnswer";
-import {
-  GlobalSVGSelector,
-  PopupSelector,
-} from "../../accets/image/global/globalImageSelector";
+import { PopupSelector } from "../../accets/image/global/globalImageSelector";
 import { useCustomDispatch } from "../../hooks/storeHooks";
-import {
-  setAnswerState,
-  setSvgWeather,
-} from "../../store/slices/CardAnswerSlice";
-import { Clock } from "../../pages/home/components/components/UtilityFunction/Clock";
-interface Props {
-  isOpen: boolean;
-}
+import { setAnswerState } from "../../store/slices/CardAnswerSlice";
+
 export const Popup = () => {
   const [active, setActive] = useState(true);
   const { cardInfo, Answer, Days, city } = useSelector(selectAnswerCard);

@@ -1,8 +1,5 @@
-import React from "react";
 import axios, { AxiosResponse } from "axios";
 import { CardWeather } from "../store/types";
-import { SelectTabs } from "../hooks/selectTabs";
-import { useSelector } from "react-redux";
 
 export async function getCardCurrentWeather(
   latitude: number,

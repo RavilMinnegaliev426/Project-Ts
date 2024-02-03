@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./ThisDay.module.scss";
 import { GlobalSVGSelector2 } from "../../../../../accets/image/global/globalImageSelector";
 import { Weather } from "../../../../../store/types";
