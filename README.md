@@ -1,4 +1,7 @@
+## installation
 npm install
 npm start
-![image](https://github.com/RavilMinnegaliev426/Project-Ts/assets/84266444/5bf38084-e77f-4086-a156-227fb33619b0)
-![image](https://github.com/RavilMinnegaliev426/Project-Ts/assets/84266444/9ff0d85d-1a32-43e2-885a-0330a833fcba)
+## an example of the application's appearance
+![image](https://github.com/RavilMinnegaliev426/Project-Ts/assets/84266444/122845ee-4c0f-47d6-9b16-bd5da080837f)
+![image](https://github.com/RavilMinnegaliev426/Project-Ts/assets/84266444/4d9bc1f4-b9f1-474b-8e82-e49d3db70275)
+
