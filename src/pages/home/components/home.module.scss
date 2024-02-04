@@ -1,7 +1,11 @@
-.home {
-}
 .wrapper {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 756px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
 }

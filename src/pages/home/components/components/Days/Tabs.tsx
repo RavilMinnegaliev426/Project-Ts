@@ -19,10 +19,10 @@ export const Tabs = () => {
       value: "На 14 дней",
       numberState: 14,
     },
-    {
-      value: "Слайдер",
-      numberState: 14,
-    },
+    // {
+    //   value: "Слайдер",
+    //   numberState: 14,
+    // },
   ];
 
   const dispatch = useCustomDispatch();

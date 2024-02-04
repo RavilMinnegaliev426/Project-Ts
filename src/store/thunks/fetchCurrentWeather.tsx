@@ -13,7 +13,7 @@ export const fetchCurrentWeather = (payload: string) => {
         dispatch(CurrentWeatherSlice.actions.fetchCurrentWeatherError(res));
       }
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 };

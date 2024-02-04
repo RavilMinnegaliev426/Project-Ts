@@ -2,7 +2,7 @@
 .popup {
   position: absolute;
   top: calc(50% - 150px);
-  left: calc(50% - 325px);
+  left: calc(50% - 375px);
   z-index: 1001;
   display: flex;
   padding: 40px;
@@ -13,6 +13,7 @@
   border-radius: $border-radius;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .popup__active {
   @extend .popup;
@@ -20,11 +21,13 @@
 }
 
 .blur {
-  display: flex;
-  position: absolute;
+  display: block;
+  position: fixed;
   z-index: 1000;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  top: 0;
+  left: 0;
   background: rgba(0, 0, 0, 0.25);
 }
 .blur__active {
@@ -70,5 +73,22 @@
       height: 53px;
     }
     margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .popup {
+    position: fixed;
+    overflow: hidden;
+
+    box-shadow: none;
+    left: 0;
+    top: 0;
+  }
+  .blur {
+    background: var(#{--components-backgroud-default});
+  }
+  .day__city {
+    margin-bottom: 15px;
   }
 }

@@ -8,8 +8,8 @@ const IndicatorSvgSeleccor = ({ id }: Props) => {
     case "temp":
       return (
         <svg
-          width="25"
-          height="25"
+          width="38"
+          height="19"
           viewBox="0 0 25 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -82,53 +82,73 @@ const IndicatorSvgSeleccor = ({ id }: Props) => {
     case "precipitation":
       return (
         <svg
-          width="19"
-          height="19"
-          viewBox="0 0 19 19"
-          fill="none"
+          width="38px"
+          height="19px"
+          viewBox="0 0 32 32"
+          enable-background="new 0 0 32 32"
+          version="1.1"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_2_124)">
-            <path
-              d="M10.1345 0.281303C9.81729 -0.0359516 9.34139 -0.115293 8.94479 0.201998C8.94479 0.201998 8.86549 0.201998 8.86549 0.281303C8.23094 1.07446 2.3615 8.21295 2.3615 11.8615C2.3615 15.8274 5.53416 19 9.5 19C13.4658 19 16.6385 15.8274 16.6385 11.8615C16.6385 8.21295 10.7691 1.07446 10.1345 0.281303Z"
-              fill="url(#paint0_linear_2_124)"
-            />
-            <path
-              d="M7.70508 13.9841L12.4723 9.21692L11.3506 8.09524L6.58341 12.8624L7.70508 13.9841Z"
-              fill="white"
-            />
-            <path
-              d="M7.12049 10.2752C7.55853 10.2752 7.91364 9.92004 7.91364 9.482C7.91364 9.04395 7.55853 8.68884 7.12049 8.68884C6.68244 8.68884 6.32733 9.04395 6.32733 9.482C6.32733 9.92004 6.68244 10.2752 7.12049 10.2752Z"
-              fill="white"
-            />
-            <path
-              d="M11.8795 13.4478C12.3175 13.4478 12.6726 13.0927 12.6726 12.6547C12.6726 12.2166 12.3175 11.8615 11.8795 11.8615C11.4414 11.8615 11.0863 12.2166 11.0863 12.6547C11.0863 13.0927 11.4414 13.4478 11.8795 13.4478Z"
-              fill="white"
-            />
+          <g id="Energy20" />
+
+          <g id="Energy19" />
+
+          <g id="Energy18" />
+
+          <g id="Energy17" />
+
+          <g id="Energy16" />
+
+          <g id="Energy15" />
+
+          <g id="Energy14" />
+
+          <g id="Energy13" />
+
+          <g id="Energy12" />
+
+          <g id="Energy11">
+            <g>
+              <path
+                d="M28,19c0,6.62-5.38,12-12,12S4,25.62,4,19C4,12.58,14.83,1.75,15.3,1.29c0.39-0.39,1.01-0.39,1.4,0    C17.17,1.75,28,12.58,28,19z"
+                fill="#65B1FC"
+              />
+            </g>
+
+            <g>
+              <path
+                d="M14,26c-3.3086,0-6-2.6914-6-6c0-0.5527,0.4478-1,1-1s1,0.4473,1,1c0,2.2061,1.7944,4,4,4    c0.5522,0,1,0.4473,1,1S14.5522,26,14,26z"
+                fill="#FFFFFF"
+              />
+            </g>
           </g>
-          <defs>
-            <linearGradient
-              id="paint0_linear_2_124"
-              x1="3.90805"
-              y1="16.383"
-              x2="15.0729"
-              y2="5.22218"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#34CDFA" />
-              <stop offset="1" stop-color="#E8D9F1" />
-            </linearGradient>
-            <clipPath id="clip0_2_124">
-              <rect width="19" height="19" fill="white" />
-            </clipPath>
-          </defs>
+
+          <g id="Energy10" />
+
+          <g id="Energy09" />
+
+          <g id="Energy08" />
+
+          <g id="Energy07" />
+
+          <g id="Energy06" />
+
+          <g id="Energy05" />
+
+          <g id="Energy04" />
+
+          <g id="Energy03" />
+
+          <g id="Energy02" />
+
+          <g id="Energy01" />
         </svg>
       );
     case "pressure":
       return (
         <svg
-          width="36"
-          height="36"
+          width="38"
+          height="38"
           viewBox="0 0 36 36"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -168,8 +188,8 @@ const IndicatorSvgSeleccor = ({ id }: Props) => {
     case "wind":
       return (
         <svg
-          width="20"
-          height="18"
+          width="38"
+          height="19"
           viewBox="0 0 20 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -193,8 +213,8 @@ const IndicatorSvgSeleccor = ({ id }: Props) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="body_1"
-          width="28"
-          height="28"
+          width="19"
+          height="19"
         >
           <g transform="matrix(0.7368421 0 0 0.7368421 0 0)">
             <path
@@ -317,8 +337,8 @@ const IndicatorSvgSeleccor = ({ id }: Props) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="body_1"
-          width="28"
-          height="25"
+          width="19"
+          height="19"
         >
           <defs>
             <linearGradient

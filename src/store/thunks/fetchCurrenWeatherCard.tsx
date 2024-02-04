@@ -19,7 +19,7 @@ export const fetchCurrentWeatherCard = (
         dispatch(CurrentWeatherCardSlice.actions.fetchCurrentWeatherError(res));
       }
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 };

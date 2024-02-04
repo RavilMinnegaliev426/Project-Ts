@@ -14,8 +14,6 @@ export const Popup = () => {
   const { cardInfo, Answer, Days, city } = useSelector(selectAnswerCard);
 
   const dispatch = useCustomDispatch();
-  console.log(cardInfo, Answer, Days);
-  console.log(Answer, Days);
 
   const items = [
     {
@@ -31,7 +29,7 @@ export const Popup = () => {
     {
       icon_id: "precipitation",
       name: "Вероятность выпадения осадков:",
-      value: `${cardInfo.probability} %`,
+      value: `${cardInfo.probability}%`,
     },
     {
       icon_id: "wind",
@@ -46,7 +44,6 @@ export const Popup = () => {
   }
 
   function sunSetRise(value: string) {
-    console.log(value.slice(-5));
     return value.slice(-5);
   }
 

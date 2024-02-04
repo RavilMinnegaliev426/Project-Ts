@@ -9,6 +9,7 @@
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   margin-left: 20px;
+  overflow: hidden;
 }
 
 .item {
@@ -16,6 +17,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 25px;
+  z-index: 1;
 
   &:last-of-type {
     margin-bottom: 0px;
@@ -51,4 +53,10 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media (max-width: 756px) {
+  .this__Day_info {
+    margin-left: 0px;
+  }
 }
