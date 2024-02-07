@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://ravilminnegaliev426.github.io/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -30,6 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
